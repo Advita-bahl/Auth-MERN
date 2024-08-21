@@ -8,7 +8,7 @@ const cors= require("cors");
 
 app.use(cors());
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 
 const userRoute =require("./routes/userRoute.js");
@@ -18,10 +18,10 @@ app.use(express.json());
 mongoose.connect(process.env.URI)
 .then(()=>{
     console.log("connected successfully");
-    app.listen(PORT , (err)=>{
+    app.listen(port , (err)=>{
         if(err) console.log(err);
 
-        console.log("running successfully at", process.env.PORT);
+        console.log("running successfully at", port);
     });
 }).catch((error)=>{
     console.log("error", error);
